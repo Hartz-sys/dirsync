@@ -1,0 +1,25 @@
+name: itsm
+host: 192.168.1.100
+port: 22
+user: deploy
+
+# 认证方式：password / key / auto（默认 auto，有 private_key 时用密钥）
+auth_method: password
+password: "your-password"
+private_key: "~/.ssh/id_rsa"
+# private_key_passphrase: ""
+
+local_dir: "/Users/houzhen/Documents/Cursor_workspace/Go/itsm"
+remote_dir: "/opt/itsm"
+
+exclude:
+  - ".git"
+  - "node_modules"
+  - "*.log"
+
+delete_extra: false
+dry_run: false
+
+# 同步前备份远端目录（默认开启）；backup_dir 为空时生成 remote_dir.bak.时间戳
+backup_before_sync: true
+# backup_dir: "/opt/backups"
